@@ -7,6 +7,12 @@
         <option value="General Maxilom Ave Cebu City Cebu Philippines">General Maxilom Ave Cebu City Cebu Philippines</option>
         <option value="F Ramos Street Cebu City Cebu Philippines">F Ramos Street Cebu City Cebu Philippines</option>   
         <option value="Don Mariano Cui St Cebu City Cebu Philippines">Don Mariano Cui St Cebu City Cebu Philippines</option>
+        <option value="6 A. Climaco St, Cebu City, Cebu, Philippines">6 A. Climaco St, Cebu City, Cebu, Philippines</option>
+        <option value="Osmena Blvd, Cebu City, Cebu, Philippines">Osmeña Blvd, Cebu City, Cebu, Philippines</option>
+        <option value="The River Gate Complex, Cebu City, Cebu">The River Gate Complex, Cebu City, Cebu</option>
+        <option value="Richie Bldg, Francisco Llamas St, Cebu City, 6000 Cebu, Philippines">Richie Bldg, Francisco Llamas St, Cebu City, 6000 Cebu, Philippines</option>
+
+        
 
     </select>
 
@@ -22,18 +28,11 @@
     </div>
 </div>
 
-<!-- <select id="type" onchange="filterMarkers(this.value);">
-    <option value="">Please select category</option>
-    <option value="High Price">High Price</option>
-    <option value="Average price">Average price</option>
-    <option value="third">third</option>
-</select> -->
-
-<div id="map"></div>
+  <div id="map"></div>
 
 <!-- Replace the value of the key parameter with your own API key. -->
 <script async defer
-src="file:///Users/markvilludo/Documents/Projects/Exercises/google_map_activity/google_apis.js">
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVv7Om1gEOD3UulCT3lVbwWl55nqGupoY&sensor=true&libraries=places&callback=initMap">
 
 </script>
 
@@ -58,16 +57,16 @@ function initMap() {
 
     /* list of coordinates marker */
     var latLangs = [
-        {lat: 10.31672, lng: 123.89072, title: 'Hello test',specialty: 'Adobo', type: 'High Price'},
-        {lat: 10.295879, lng: 123.869639, title: 'IT Park', specialty: 'Menudo', type: 'High Price'},
-        {lat: 10.314028, lng: 123.890003, title: 'STK ta Bay!', specialty: 'Pork steak', type: 'High Price'},
-        {lat: 10.315571, lng: 123.889976, title: 'Yakski Barbecue', specialty: 'Lechon', type: 'High Price'},
+        {lat: 10.313553, lng: 123.892089, title: 'Orange Brutus',specialty: 'Burger Steak', type: 'High Price'},
+        {lat: 10.295927, lng: 123.869689, title: 'Ahl Richie & Ahl Rose', specialty: 'Bread', type: 'High Price'},
+        {lat: 10.313271, lng: 123.890093, title: 'STK ta Bay!', specialty: 'Pork steak', type: 'High Price'},
+        {lat: 10.315084, lng: 123.889902, title: 'Yakski Barbecue', specialty: 'Lechon', type: 'High Price'},
         {lat: 10.310709, lng: 123.900720, title: 'No 9 Restaurant', specialty: 'Pasta', type: 'Average price'},
-        {lat: 10.310900, lng: 123.896417, title: 'House Of Pochero', address:"General Maxilom Ave Cebu City Cebu Philippines",  specialty: 'Crablicious', type: ' Average price'},
+        {lat: 10.311899, lng: 123.900465, title: 'KOA Tree House', specialty: 'Crablicious', type: ' Average price'},
         {lat: 10.309758, lng: 123.891815, title: 'Larsian', specialty: 'Embotido', type: ' Average price'},
-        {lat: 10.302387, lng: 123.889268, title: 'Healthy U', specialty: 'Longanisa', type: 'Average price'},
+        {lat: 10.302141, lng: 123.889241, title: 'Healthy U', specialty: 'Longanisa', type: 'Average price'},
         {lat: 10.306192, lng: 123.897571, title: 'Kanadara Restaurant', specialty: 'lechon paksiw', type: 'low price'},
-        {lat: 10.313356, lng: 123.904402, title: 'Food Wonder', specialty: 'Kare Kare', type: 'low price'},
+        {lat:  10.314653, lng: 123.894637, title: 'Burgaholic Chargrilled Burgers', specialty: 'Burgers', type: 'low price'},
     ];
 
       var infowindow = new google.maps.InfoWindow();
@@ -246,81 +245,81 @@ AutocompleteDirectionsHandler.prototype.route = function() {
 
 </script>
 
-
-<style type="text/css">
+<!-- //css -->
+<style type="text/css" >
   /* Always set the map height explicitly to define the size of the div
- * element that contains the map. */
-#map {
-  height: 100%;
-}
-/* Optional: Makes the sample page fill the window. */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-/*
-for method of transpo
-*/
-#map-canvas {
-    width: 500px;
-    height: 500px;
-}
-#floating-panel {
-    position: absolute;
-    top: 10px;
-    left: 25%;
-    z-index: 5;
-    background-color: #fff;
-    padding: 5px;
-    border: 1px solid #999;
-    text-align: center;
-    font-family: 'Roboto','sans-serif';
-    line-height: 30px;
-    padding-left: 10px;
+    * element that contains the map. */
+  #map {
+    height: 100%;
   }
-/* end for transpo */
-/* for controls destination and start */    
-.controls {
-  margin-top: 10px;
-  border: 1px solid transparent;
-  border-radius: 2px 0 0 2px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  height: 32px;
-  outline: none;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
+  /* Optional: Makes the sample page fill the window. */
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
 
-#origin-input,
-#destination-input {
-  background-color: #fff;
-  font-family: Roboto;
-  font-size: 15px;
-  font-weight: 300;
-  margin-left: 12px;
-  padding: 0 11px 0 13px;
-  text-overflow: ellipsis;
-  width: 200px;
-}
+  /*
+  for method of transpo
+  */
+  #map-canvas {
+      width: 500px;
+      height: 500px;
+  }
+  #floating-panel {
+      position: absolute;
+      top: 10px;
+      left: 25%;
+      z-index: 5;
+      background-color: #fff;
+      padding: 5px;
+      border: 1px solid #999;
+      text-align: center;
+      font-family: 'Roboto','sans-serif';
+      line-height: 30px;
+      padding-left: 10px;
+    }
+  /* end for transpo */
+  /* for controls destination and start */    
+  .controls {
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
 
-#origin-input:focus,
-#destination-input:focus {
-  border-color: #4d90fe;
-}
+  #origin-input,
+  #destination-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 200px;
+  }
 
-#mode-selector {
-  color: #fff;
-  background-color: #4d90fe;
-  margin-left: 12px;
-  padding: 5px 11px 0px 11px;
-}
+  #origin-input:focus,
+  #destination-input:focus {
+    border-color: #4d90fe;
+  }
 
-#mode-selector label {
-  font-family: Roboto;
-  font-size: 13px;
-  font-weight: 300;
-}
-/* end for destination and start */
+  #mode-selector {
+    color: #fff;
+    background-color: #4d90fe;
+    margin-left: 12px;
+    padding: 5px 11px 0px 11px;
+  }
+
+  #mode-selector label {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300;
+  }
+  /* end for destination and start */
 </style>
