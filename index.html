@@ -1,4 +1,5 @@
 <div style="display: block;">
+
     <input id="origin-input" class="controls" type="text"
         placeholder="Enter an origin location">
 
@@ -11,9 +12,7 @@
         <option value="Osmena Blvd, Cebu City, Cebu, Philippines">Osmeña Blvd, Cebu City, Cebu, Philippines</option>
         <option value="The River Gate Complex, Cebu City, Cebu">The River Gate Complex, Cebu City, Cebu</option>
         <option value="Richie Bldg, Francisco Llamas St, Cebu City, 6000 Cebu, Philippines">Richie Bldg, Francisco Llamas St, Cebu City, 6000 Cebu, Philippines</option>
-
-        
-
+        <option value="Orange Brutus Cebu Doctors">Orange Brutus Cebu Doctors, Cebu City Cebu Philippines</option>
     </select>
 
     <div id="mode-selector" class="controls">
@@ -28,7 +27,7 @@
     </div>
 </div>
 
-  <div id="map"></div>
+<div id="map"></div>
 
 <!-- Replace the value of the key parameter with your own API key. -->
 <script async defer
@@ -57,7 +56,7 @@ function initMap() {
 
     /* list of coordinates marker */
     var latLangs = [
-        {lat: 10.313553, lng: 123.892089, title: 'Orange Brutus',specialty: 'Burger Steak', type: 'High Price'},
+        {lat: 10.313531, lng: 123.892100, title: 'Orange Brutus', specialty: 'Burger Steak', type: 'High Price'},
         {lat: 10.295927, lng: 123.869689, title: 'Ahl Richie & Ahl Rose', specialty: 'Bread', type: 'High Price'},
         {lat: 10.313271, lng: 123.890093, title: 'STK ta Bay!', specialty: 'Pork steak', type: 'High Price'},
         {lat: 10.315084, lng: 123.889902, title: 'Yakski Barbecue', specialty: 'Lechon', type: 'High Price'},
@@ -87,22 +86,21 @@ function initMap() {
                 animation: google.maps.Animation.DROP,
                 title: latLangs[i].title,
                 coordinates: latLangs[i].lat+ ' - '+ latLangs[i].lng,
-                specialty: latLangs[i].specialty,
                 type: latLangs[i].type,
                 lat: latLangs[i].lat,
                 lng: latLangs[i].lng,
+                text: latLangs[i].specialty,
                 category: types,
                 mapTypeId: google.maps.MapTypeId.TERRAIN,
-                // position: place.geometry.location
               });
               //end list make marker
 
               //info window
               google.maps.event.addListener(marker, 'click', function(item)  {
-                console.log(marker.coordinates)
+                console.log(marker)
                 infowindow.setContent('<div><strong>' + item.wa.target.title + '</strong><br>' +
                   '<br>' + marker.coordinates + '<br>' +
-                  'Specialty:<b> ' + marker.specialty +'</b><br>'+'<br></div>');
+                  'Specialty:<b> ' + marker.text +'</b><br>'+'<br></div>');
                 infowindow.open(map, this);
               });
           }
